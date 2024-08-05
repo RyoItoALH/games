@@ -1,0 +1,38 @@
+<div
+  class="modal fade"
+  id="typingModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-fluid">
+    <div class="modal-content">
+      <div class="modal-header row">
+        <div class="modal-title fs-5" id="staticBackdropLabel">
+          <p class="col modal-title-text">残り時間</p>
+          <p class="col modal-title-time" id="modalTime">60</p>
+          <button
+            type="button"
+            id="closeModalButton"
+            class="btn-close col-12"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalBodyWord"></p>
+        <br />
+        <p id="modalBodySpell"></p>
+        <br />
+        <p id="modalBodyTypingSpell"></p>
+      </div>
+      <div class="modal-footer">
+        <h3 class="modalScoreTitle col">Score:</h3>
+        <p class="modalScoreContent col" id="modalScore">0</p>
+      </div>
+    </div>
+  </div>
+</div>

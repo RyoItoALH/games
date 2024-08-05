@@ -1,0 +1,35 @@
+/*モーダル設定*/
+.modal-title {
+  display: flex;
+  align-items: center;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-title .col {
+  flex: 1;
+}
+
+.btn-close {
+  flex: none; /* ボタンのサイズを固定するため */
+}
+
+.modalScoreContent {
+  font-size: 20px;
+}
+
+/* カード設定 */
+.card {
+  margin: 5px;
+  border: 2px solid #808080;
+  background-color: #c0c0c0;
+}
+.card-title {
+  color: red;
+}
+
+.card-text {
+  color: red;
+}
