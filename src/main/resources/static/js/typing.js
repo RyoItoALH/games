@@ -127,5 +127,5 @@ function finishTimersStyle() {
 document
   .getElementById("closeModalButton")
   .addEventListener("click", function () {
-    window.location.reload();
+    document.getElementsByClassName("typigScore-content").innerText = score;
   });
