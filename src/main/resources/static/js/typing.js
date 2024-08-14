@@ -4,43 +4,38 @@ var spellCount = 0; //対象スペルの文字数
 var spellList = []; //タイピング対象のスペル管理
 var typedSpell = ""; // タイピング済みのスペル管理
 var typingSpellCount = 0; // 入力中のタイピングスペル番号
-let timeCount = 10; // カウントダウンの開始値
+let timeCount = 60; // カウントダウンの開始値
 var score = 0; // スコア管理
 
 // html要素取得
-var modalBodyWord = document.getElementById("modalBodyWord");
-var modalBodySpell = document.getElementById("modalBodySpell");
-var modalBodyTypingSpell = document.getElementById("modalBodyTypingSpell");
 var modalTime = document.getElementById("modalTime");
 var modalScore = document.getElementById("modalScore");
 var TitleScore = document.getElementById("titleScore");
-let list1;
-let list2;
-let list3;
+let typingList;
 
-// htmlからjsにファイルを送る
-function setTypingList(typingList) {
-  list1 = typingList[0];
-  list2 = typingList[1];
-  list3 = typingList[2];
-}
 // モーダルボタン押下時の処理
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("modalButton").addEventListener("click", function () {
-    // 1～3のランダムでリストを指定する
+document
+  .getElementById("modalButton")
+  .addEventListener("click", async function () {
     //　画面初期表示
     showScore(0);
     showRestTime(60);
-    setModalView();
-    startRestTime();
+
+    // 非同期通信でファイルを取得
+    getTypingListData(1, function (data) {
+      if (data != null) {
+        typingList = data;
+        setModalView();
+        startRestTime();
+      }
+    });
   });
 
-  //　入力時の判定
-  document.addEventListener("keyup", function (event) {
-    if (startTypingFlg) {
-      checkSpell(event.key);
-    }
-  });
+//　入力時の判定
+document.addEventListener("keyup", function (event) {
+  if (startTypingFlg) {
+    checkSpell(event.key);
+  }
 });
 
 // 制限時間管理の変数を動かす
@@ -53,14 +48,20 @@ function startRestTime() {
   }, 1000);
 }
 
-//モーダル画面の表示 一旦list1
+//モーダル画面の表示
 function setModalView() {
-  console.log(TPListNum);
-  modalBodyWord.textContent = list1[TPListNum].viewName;
-  modalBodySpell.textContent = list1[TPListNum].spell;
-  spellCount = list1[TPListNum].spell.length;
+  // 日本語表示
+  document.getElementById("modalBodyWord").innerText =
+    typingList[TPListNum].viewName;
+
+  // アルファベット表示
+  document.getElementById("modalBodySpell").innerText =
+    typingList[TPListNum].spell;
+
+  // アルファベット数計測・入力用スペルリスト作成
+  spellCount = typingList[TPListNum].spell.length;
   for (i = 0; i < spellCount; i++) {
-    this.spellList.push(list1[TPListNum].spell.slice(i, i + 1));
+    this.spellList.push(typingList[TPListNum].spell.slice(i, i + 1));
   }
 }
 
@@ -82,8 +83,6 @@ function checkSpell(key) {
       this.typedSpell = "";
       setModalView();
     }
-  } else {
-    console.log("入力失敗");
   }
 
   // 入力済みのスペルを表示・Score表示
@@ -111,9 +110,15 @@ function countdown() {
   timeCount -= 1;
   showRestTime(timeCount);
   if (timeCount <= 0) {
-    finishTimersStyle();
-    this.startTypingFlg = false;
+    finishTyping();
   }
+}
+
+// タイピング終了処理
+function finishTyping() {
+  finishTimersStyle();
+  setSession();
+  this.startTypingFlg = false;
 }
 
 // 終了時のスタイル変更関数
@@ -123,9 +128,38 @@ function finishTimersStyle() {
   modalScore.style.fontSize = "30px";
 }
 
+// ローカルストレージ管理
+function setSession() {
+  if (localStorage.getItem("typingTotal")) {
+    let totalScore = parseInt(localStorage.getItem("typingTotal"));
+    totalScore += score;
+    localStorage.setItem("typingTotal", totalScore);
+  } else {
+    localStorage.setItem("typingTotal", score);
+  }
+  console.log(localStorage);
+}
+
 // クローズボタン押下時の処理
 document
   .getElementById("closeModalButton")
   .addEventListener("click", function () {
-    window.location.reload();
+    location.reload();
   });
+
+// 非同期通信処理(タイピングリストを取得)
+function getTypingListData(num, callback) {
+  $.ajax({
+    type: "GET",
+    url: "/typingList",
+    data: { num: num },
+    dataType: "json",
+    success: function (response) {
+      callback(response);
+    },
+    error: function (error) {
+      console.error("非同期通信失敗", error);
+      callback(null);
+    },
+  });
+}

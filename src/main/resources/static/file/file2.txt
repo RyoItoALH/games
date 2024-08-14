@@ -97,4 +97,3 @@
 森,mori
 山村,yamamura
 飯田,iida
-谷,tani
