@@ -1,9 +1,5 @@
 package com.example.gemes.repository;
 
-import org.springframework.stereotype.Repository;
-
-import com.example.gemes.entity.Typing;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,26 +8,31 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+import com.example.gemes.entity.Typing;
+
 
 @Repository
 public class TypingRepository {
+    private static final String DIRECTORY_PATH = "src/main/resources/static/file/";
 
     /**
-     * ディレクトリー名前を取得
+     * ファイル名一覧を取得
      *
      * @return String[]=ファイル名
      */
     public String[] getFileNames() {
-        String[] array = new String[3];
-        //Fileクラスのオブジェクトを生成する
-        File dir = new File("src/main/resources/static/file/");
-
-        //listFilesメソッドを使用して一覧を取得する
+        File dir = new File(DIRECTORY_PATH);
         File[] list = dir.listFiles();
-        if (list != null) {
-            for (int i = 0; i < Math.min(list.length, 3); i++) {
-                array[i] = list[i].getName(); // ファイル名を配列に追加
-            }
+
+        // 中身がない時は空配列を返す
+        if (list == null) {
+            return new String[0];
+        }
+        String[] array = new String[Math.min(list.length, 3)];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = list[i].getName();
         }
         return array;
     }
@@ -43,29 +44,29 @@ public class TypingRepository {
      */
     public List<Typing> getAllList(String fileName) {
         List<Typing> result = new ArrayList<>();
-        try {
-            File file = new File("src/main/resources/static/file/" + fileName);
-
-            if (file.exists()) {
-                FileReader fr = new FileReader(file, StandardCharsets.UTF_8);
-                BufferedReader br = new BufferedReader(fr);
-                String content;
-                int count = 0;
-                while ((content = br.readLine()) != null) {
-                    String[] parts = content.split(",");
+        File file = new File(DIRECTORY_PATH + fileName);
+        if (!file.exists()) {
+            return result; // ファイルが存在しない場合は空のリストを返す
+        }
+        try (BufferedReader br = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8))) {
+            String content;
+            int count = 0;
+            while ((content = br.readLine()) != null) {
+                String[] parts = content.split(",");
+                if (parts.length >= 2) { // データが不足していないかチェック
                     Typing typing = new Typing();
                     typing.setId(++count);
                     typing.setViewName(parts[0]);
                     typing.setSpell(parts[1]);
                     result.add(typing);
                 }
-                br.close();
             }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         return result;
     }
+    
 
     /**
      * ファイルの行数をカウント
@@ -73,9 +74,12 @@ public class TypingRepository {
      * @return Integer ファイルの行数
      */
     public Integer getFileLength(String fileName) {
-        String filePath = "src/main/resources/static/file/" + fileName; // ファイルのパスを指定
+        File file = new File(DIRECTORY_PATH + fileName);
+        if (!file.exists()) {
+            return 0; // ファイルが存在しない場合は 0 を返す
+        }
         int lineCount = 0;
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             while (br.readLine() != null) {
                 lineCount++;
             }
@@ -84,5 +88,4 @@ public class TypingRepository {
         }
         return lineCount;
     }
-    
 }

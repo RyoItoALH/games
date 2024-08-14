@@ -17,11 +17,11 @@
       <div class="row score">
         <div class="col-4 typingScore">
           <p>タイピングスコア</p>
-          <p class="typigScore-content">100</p>
+          <p class="typigScore-content" id="topTpScore">0</p>
         </div>
         <div class="col-4 patincoScore">
-          <p>パチンコスコア</p>
-          <p class="patincoScore-content">200</p>
+          <p>ギャンブルスコア</p>
+          <p class="patincoScore-content" id="topGambleScore">0</p>
         </div>
       </div>
       <div class="row">
@@ -56,9 +56,7 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script th:src="@{/js/top.js}"></script>
     <script th:src="@{/js/typing.js}"></script>
-    <script th:inline="javascript">
-      var typingList = /*[[${typingList}]]*/ setTypingList(typingList);
-    </script>
   </body>
 </html>
