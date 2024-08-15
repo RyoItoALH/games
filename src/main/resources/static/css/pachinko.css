@@ -1,0 +1,240 @@
+.pModalBodyText {
+  gap: 50px; /* アイテム間のスペース（任意で調整） */
+  height: 100px;
+  background-color: silver;
+  justify-content: center; /* コンテナ内のアイテムを中央揃え */
+  align-items: center; /* アイテムの垂直方向の中央揃え */
+}
+/* ドット絵全体 */
+.dotHa::before,
+.dotSu::before,
+.dotDaku::before,
+.dotRe::before,
+.dotA::before,
+.dotTa::before,
+.dotRi::before {
+  content: "";
+  display: inline-block;
+  top: -4px;
+  left: -4px;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+}
+
+/* は */
+.dotHa::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    4px 8px 0 transparent, 8px 8px 0 rgb(218, 36, 0), 12px 8px 0 transparent,
+    16px 8px 0 transparent, 20px 8px 0 transparent, 24px 8px 0 rgb(218, 36, 0),
+    28px 8px 0 transparent, 32px 8px 0 transparent, 4px 12px 0 transparent,
+    8px 12px 0 rgb(218, 36, 0), 12px 12px 0 transparent,
+    16px 12px 0 rgb(218, 36, 0), 20px 12px 0 rgb(218, 36, 0),
+    24px 12px 0 rgb(218, 36, 0), 28px 12px 0 rgb(218, 36, 0),
+    32px 12px 0 rgb(218, 36, 0), 4px 16px 0 transparent,
+    8px 16px 0 rgb(218, 36, 0), 12px 16px 0 transparent, 16px 16px 0 transparent,
+    20px 16px 0 transparent, 24px 16px 0 rgb(218, 36, 0),
+    28px 16px 0 transparent, 32px 16px 0 transparent, 4px 20px 0 transparent,
+    8px 20px 0 rgb(218, 36, 0), 12px 20px 0 transparent, 16px 20px 0 transparent,
+    20px 20px 0 transparent, 24px 20px 0 rgb(218, 36, 0),
+    28px 20px 0 transparent, 32px 20px 0 transparent, 4px 24px 0 transparent,
+    8px 24px 0 rgb(218, 36, 0), 12px 24px 0 transparent, 16px 24px 0 transparent,
+    20px 24px 0 rgb(218, 36, 0), 24px 24px 0 rgb(218, 36, 0),
+    28px 24px 0 transparent, 32px 24px 0 transparent, 4px 28px 0 transparent,
+    8px 28px 0 rgb(218, 36, 0), 12px 28px 0 transparent,
+    16px 28px 0 rgb(218, 36, 0), 20px 28px 0 transparent,
+    24px 28px 0 rgb(218, 36, 0), 28px 28px 0 rgb(218, 36, 0),
+    32px 28px 0 transparent, 4px 32px 0 transparent, 8px 32px 0 rgb(218, 36, 0),
+    12px 32px 0 transparent, 16px 32px 0 transparent,
+    20px 32px 0 rgb(218, 36, 0), 24px 32px 0 transparent,
+    28px 32px 0 transparent, 32px 32px 0 rgb(218, 36, 0);
+}
+/* す */
+.dotSu::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    4px 8px 0 transparent, 8px 8px 0 transparent, 12px 8px 0 transparent,
+    16px 8px 0 transparent, 20px 8px 0 rgb(218, 36, 0), 24px 8px 0 transparent,
+    28px 8px 0 transparent, 32px 8px 0 transparent, 4px 12px 0 transparent,
+    8px 12px 0 rgb(218, 36, 0), 12px 12px 0 rgb(218, 36, 0),
+    16px 12px 0 rgb(218, 36, 0), 20px 12px 0 rgb(218, 36, 0),
+    24px 12px 0 rgb(218, 36, 0), 28px 12px 0 transparent,
+    32px 12px 0 transparent, 4px 16px 0 transparent, 8px 16px 0 transparent,
+    12px 16px 0 transparent, 16px 16px 0 rgb(218, 36, 0),
+    20px 16px 0 rgb(218, 36, 0), 24px 16px 0 transparent,
+    28px 16px 0 transparent, 32px 16px 0 transparent, 4px 20px 0 transparent,
+    8px 20px 0 transparent, 12px 20px 0 rgb(218, 36, 0), 16px 20px 0 transparent,
+    20px 20px 0 rgb(218, 36, 0), 24px 20px 0 transparent,
+    28px 20px 0 transparent, 32px 20px 0 transparent, 4px 24px 0 transparent,
+    8px 24px 0 transparent, 12px 24px 0 transparent, 16px 24px 0 rgb(218, 36, 0),
+    20px 24px 0 rgb(218, 36, 0), 24px 24px 0 transparent,
+    28px 24px 0 transparent, 32px 24px 0 transparent, 4px 28px 0 transparent,
+    8px 28px 0 transparent, 12px 28px 0 transparent, 16px 28px 0 transparent,
+    20px 28px 0 rgb(218, 36, 0), 24px 28px 0 transparent,
+    28px 28px 0 transparent, 32px 28px 0 transparent, 4px 32px 0 transparent,
+    8px 32px 0 transparent, 12px 32px 0 rgb(218, 36, 0),
+    16px 32px 0 rgb(218, 36, 0), 20px 32px 0 transparent,
+    24px 32px 0 transparent, 28px 32px 0 transparent, 32px 32px 0 transparent;
+}
+/* 濁点 */
+.dotDaku::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    4px 8px 0 transparent, 8px 8px 0 transparent, 12px 8px 0 transparent,
+    16px 8px 0 transparent, 20px 8px 0 rgb(218, 36, 0), 24px 8px 0 transparent,
+    28px 8px 0 rgb(218, 36, 0), 32px 8px 0 transparent, 4px 12px 0 transparent,
+    8px 12px 0 transparent, 12px 12px 0 transparent, 16px 12px 0 transparent,
+    20px 12px 0 rgb(218, 36, 0), 24px 12px 0 transparent,
+    28px 12px 0 rgb(218, 36, 0), 32px 12px 0 transparent, 4px 16px 0 transparent,
+    8px 16px 0 transparent, 12px 16px 0 transparent, 16px 16px 0 transparent,
+    20px 16px 0 transparent, 24px 16px 0 transparent, 28px 16px 0 transparent,
+    32px 16px 0 transparent, 4px 20px 0 transparent, 8px 20px 0 transparent,
+    12px 20px 0 transparent, 16px 20px 0 transparent, 20px 20px 0 transparent,
+    24px 20px 0 transparent, 28px 20px 0 transparent, 32px 20px 0 transparent,
+    4px 24px 0 transparent, 8px 24px 0 transparent, 12px 24px 0 transparent,
+    16px 24px 0 transparent, 20px 24px 0 transparent, 24px 24px 0 transparent,
+    28px 24px 0 transparent, 32px 24px 0 transparent, 4px 28px 0 transparent,
+    8px 28px 0 transparent, 12px 28px 0 transparent, 16px 28px 0 transparent,
+    20px 28px 0 transparent, 24px 28px 0 transparent, 28px 28px 0 transparent,
+    32px 28px 0 transparent, 4px 32px 0 transparent, 8px 32px 0 transparent,
+    12px 32px 0 transparent, 16px 32px 0 transparent, 20px 32px 0 transparent,
+    24px 32px 0 transparent, 28px 32px 0 transparent, 32px 32px 0 transparent;
+}
+/* れ */
+.dotRe::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    4px 8px 0 transparent, 8px 8px 0 transparent, 12px 8px 0 rgb(218, 36, 0),
+    16px 8px 0 transparent, 20px 8px 0 transparent, 24px 8px 0 transparent,
+    28px 8px 0 transparent, 32px 8px 0 transparent, 4px 12px 0 transparent,
+    8px 12px 0 transparent, 12px 12px 0 rgb(218, 36, 0), 16px 12px 0 transparent,
+    20px 12px 0 rgb(218, 36, 0), 24px 12px 0 rgb(218, 36, 0),
+    28px 12px 0 transparent, 32px 12px 0 transparent, 4px 16px 0 transparent,
+    8px 16px 0 rgb(218, 36, 0), 12px 16px 0 rgb(218, 36, 0),
+    16px 16px 0 rgb(218, 36, 0), 20px 16px 0 transparent,
+    24px 16px 0 rgb(218, 36, 0), 28px 16px 0 transparent,
+    32px 16px 0 transparent, 4px 20px 0 transparent, 8px 20px 0 transparent,
+    12px 20px 0 rgb(218, 36, 0), 16px 20px 0 transparent,
+    20px 20px 0 transparent, 24px 20px 0 rgb(218, 36, 0),
+    28px 20px 0 transparent, 32px 20px 0 transparent, 4px 24px 0 transparent,
+    8px 24px 0 rgb(218, 36, 0), 12px 24px 0 rgb(218, 36, 0),
+    16px 24px 0 transparent, 20px 24px 0 transparent,
+    24px 24px 0 rgb(218, 36, 0), 28px 24px 0 transparent,
+    32px 24px 0 transparent, 4px 28px 0 transparent, 8px 28px 0 transparent,
+    12px 28px 0 rgb(218, 36, 0), 16px 28px 0 transparent,
+    20px 28px 0 transparent, 24px 28px 0 rgb(218, 36, 0),
+    28px 28px 0 transparent, 32px 28px 0 rgb(218, 36, 0), 4px 32px 0 transparent,
+    8px 32px 0 transparent, 12px 32px 0 rgb(218, 36, 0), 16px 32px 0 transparent,
+    20px 32px 0 transparent, 24px 32px 0 transparent,
+    28px 32px 0 rgb(218, 36, 0), 32px 32px 0 transparent;
+}
+/* あ */
+.dotA::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    36px 4px 0 transparent, 4px 8px 0 transparent, 8px 8px 0 transparent,
+    12px 8px 0 transparent, 16px 8px 0 rgb(218, 36, 0), 20px 8px 0 transparent,
+    24px 8px 0 transparent, 28px 8px 0 transparent, 32px 8px 0 transparent,
+    36px 8px 0 transparent, 4px 12px 0 transparent, 8px 12px 0 rgb(218, 36, 0),
+    12px 12px 0 rgb(218, 36, 0), 16px 12px 0 rgb(218, 36, 0),
+    20px 12px 0 rgb(218, 36, 0), 24px 12px 0 transparent,
+    28px 12px 0 transparent, 32px 12px 0 transparent, 36px 12px 0 transparent,
+    4px 16px 0 transparent, 8px 16px 0 transparent, 12px 16px 0 transparent,
+    16px 16px 0 rgb(218, 36, 0), 20px 16px 0 transparent,
+    24px 16px 0 transparent, 28px 16px 0 transparent, 32px 16px 0 transparent,
+    36px 16px 0 transparent, 4px 20px 0 transparent, 8px 20px 0 transparent,
+    12px 20px 0 transparent, 16px 20px 0 rgb(218, 36, 0),
+    20px 20px 0 transparent, 24px 20px 0 transparent,
+    28px 20px 0 rgb(218, 36, 0), 32px 20px 0 transparent,
+    36px 20px 0 transparent, 4px 24px 0 transparent, 8px 24px 0 transparent,
+    12px 24px 0 rgb(218, 36, 0), 16px 24px 0 rgb(218, 36, 0),
+    20px 24px 0 rgb(218, 36, 0), 24px 24px 0 rgb(218, 36, 0),
+    28px 24px 0 transparent, 32px 24px 0 transparent, 36px 24px 0 transparent,
+    4px 28px 0 transparent, 8px 28px 0 rgb(218, 36, 0), 12px 28px 0 transparent,
+    16px 28px 0 rgb(218, 36, 0), 20px 28px 0 transparent,
+    24px 28px 0 rgb(218, 36, 0), 28px 28px 0 rgb(218, 36, 0),
+    32px 28px 0 transparent, 36px 28px 0 transparent, 4px 32px 0 transparent,
+    8px 32px 0 rgb(218, 36, 0), 12px 32px 0 transparent,
+    16px 32px 0 rgb(218, 36, 0), 20px 32px 0 rgb(218, 36, 0),
+    24px 32px 0 transparent, 28px 32px 0 rgb(218, 36, 0),
+    32px 32px 0 transparent, 36px 32px 0 transparent, 4px 36px 0 transparent,
+    8px 36px 0 transparent, 12px 36px 0 rgb(218, 36, 0), 16px 36px 0 transparent,
+    20px 36px 0 transparent, 24px 36px 0 transparent,
+    28px 36px 0 rgb(218, 36, 0), 32px 36px 0 transparent,
+    36px 36px 0 transparent;
+}
+
+/* た */
+.dotTa::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    36px 4px 0 transparent, 4px 8px 0 transparent, 8px 8px 0 transparent,
+    12px 8px 0 rgb(218, 36, 0), 16px 8px 0 transparent, 20px 8px 0 transparent,
+    24px 8px 0 transparent, 28px 8px 0 transparent, 32px 8px 0 transparent,
+    36px 8px 0 transparent, 4px 12px 0 transparent, 8px 12px 0 rgb(218, 36, 0),
+    12px 12px 0 rgb(218, 36, 0), 16px 12px 0 rgb(218, 36, 0),
+    20px 12px 0 rgb(218, 36, 0), 24px 12px 0 transparent,
+    28px 12px 0 transparent, 32px 12px 0 transparent, 36px 12px 0 transparent,
+    4px 16px 0 transparent, 8px 16px 0 transparent, 12px 16px 0 rgb(218, 36, 0),
+    16px 16px 0 transparent, 20px 16px 0 transparent, 24px 16px 0 transparent,
+    28px 16px 0 transparent, 32px 16px 0 transparent, 36px 16px 0 transparent,
+    4px 20px 0 transparent, 8px 20px 0 rgb(218, 36, 0), 12px 20px 0 transparent,
+    16px 20px 0 transparent, 20px 20px 0 rgb(218, 36, 0),
+    24px 20px 0 rgb(218, 36, 0), 28px 20px 0 transparent,
+    32px 20px 0 transparent, 36px 20px 0 transparent, 4px 24px 0 transparent,
+    8px 24px 0 rgb(218, 36, 0), 12px 24px 0 transparent, 16px 24px 0 transparent,
+    20px 24px 0 transparent, 24px 24px 0 transparent, 28px 24px 0 transparent,
+    32px 24px 0 transparent, 36px 24px 0 transparent, 4px 28px 0 transparent,
+    8px 28px 0 rgb(218, 36, 0), 12px 28px 0 transparent,
+    16px 28px 0 rgb(218, 36, 0), 20px 28px 0 transparent,
+    24px 28px 0 transparent, 28px 28px 0 transparent, 32px 28px 0 transparent,
+    36px 28px 0 transparent, 4px 32px 0 transparent, 8px 32px 0 rgb(218, 36, 0),
+    12px 32px 0 transparent, 16px 32px 0 transparent,
+    20px 32px 0 rgb(218, 36, 0), 24px 32px 0 rgb(218, 36, 0),
+    28px 32px 0 transparent, 32px 32px 0 transparent, 36px 32px 0 transparent,
+    4px 36px 0 transparent, 8px 36px 0 transparent, 12px 36px 0 transparent,
+    16px 36px 0 transparent, 20px 36px 0 transparent, 24px 36px 0 transparent,
+    28px 36px 0 transparent, 32px 36px 0 transparent, 36px 36px 0 transparent;
+}
+
+/* り */
+.dotRi::before {
+  box-shadow: 4px 4px 0 transparent, 8px 4px 0 transparent,
+    12px 4px 0 transparent, 16px 4px 0 transparent, 20px 4px 0 transparent,
+    24px 4px 0 transparent, 28px 4px 0 transparent, 32px 4px 0 transparent,
+    36px 4px 0 transparent, 4px 8px 0 transparent, 8px 8px 0 transparent,
+    12px 8px 0 rgb(218, 36, 0), 16px 8px 0 transparent, 20px 8px 0 transparent,
+    24px 8px 0 rgb(218, 36, 0), 28px 8px 0 transparent, 32px 8px 0 transparent,
+    36px 8px 0 transparent, 4px 12px 0 transparent, 8px 12px 0 transparent,
+    12px 12px 0 rgb(218, 36, 0), 16px 12px 0 transparent,
+    20px 12px 0 transparent, 24px 12px 0 rgb(218, 36, 0),
+    28px 12px 0 transparent, 32px 12px 0 transparent, 36px 12px 0 transparent,
+    4px 16px 0 transparent, 8px 16px 0 transparent, 12px 16px 0 rgb(218, 36, 0),
+    16px 16px 0 transparent, 20px 16px 0 transparent,
+    24px 16px 0 rgb(218, 36, 0), 28px 16px 0 transparent,
+    32px 16px 0 transparent, 36px 16px 0 transparent, 4px 20px 0 transparent,
+    8px 20px 0 transparent, 12px 20px 0 rgb(218, 36, 0), 16px 20px 0 transparent,
+    20px 20px 0 transparent, 24px 20px 0 rgb(218, 36, 0),
+    28px 20px 0 transparent, 32px 20px 0 transparent, 36px 20px 0 transparent,
+    4px 24px 0 transparent, 8px 24px 0 transparent, 12px 24px 0 transparent,
+    16px 24px 0 rgb(218, 36, 0), 20px 24px 0 transparent,
+    24px 24px 0 rgb(218, 36, 0), 28px 24px 0 transparent,
+    32px 24px 0 transparent, 36px 24px 0 transparent, 4px 28px 0 transparent,
+    8px 28px 0 transparent, 12px 28px 0 transparent, 16px 28px 0 transparent,
+    20px 28px 0 transparent, 24px 28px 0 rgb(218, 36, 0),
+    28px 28px 0 transparent, 32px 28px 0 transparent, 36px 28px 0 transparent,
+    4px 32px 0 transparent, 8px 32px 0 transparent, 12px 32px 0 transparent,
+    16px 32px 0 rgb(218, 36, 0), 20px 32px 0 rgb(218, 36, 0),
+    24px 32px 0 transparent, 28px 32px 0 transparent, 32px 32px 0 transparent,
+    36px 32px 0 transparent, 4px 36px 0 transparent, 8px 36px 0 transparent,
+    12px 36px 0 transparent, 16px 36px 0 transparent, 20px 36px 0 transparent,
+    24px 36px 0 transparent, 28px 36px 0 transparent, 32px 36px 0 transparent,
+    36px 36px 0 transparent;
+}

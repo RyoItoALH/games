@@ -1,0 +1,60 @@
+<div
+  class="modal fade"
+  id="pachinkoModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-fluid">
+    <div class="modal-content">
+      <div class="modal-header row">
+        <div class="modal-title fs-5" id="staticBackdropLabel">
+          <p class="col Pmodal-title-text">状態</p>
+          <p class="col Pmodal-title-text" id="pachinkoState">通常</p>
+          <p class="col Pmodal-title-text">抽選可能回数</p>
+          <p class="col Pmodal-title-text" id="possibleNum">0</p>
+          <button
+            type="button"
+            id="closePModalButton"
+            class="btn-close col-12"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="pModalBodyText">
+          <div class="row" id="pModalBodyTextHazure">
+            <div class="col-4"></div>
+            <div class="dotHa"></div>
+            <div class="dotSu"></div>
+            <div class="dotDaku"></div>
+            <div class="dotRe"></div>
+            <div class="col-3"></div>
+          </div>
+          <div class="row" id="pModalBodyTextAtari">
+            <div class="col-4"></div>
+            <div class="col dotA"></div>
+            <div class="col dotTa"></div>
+            <div class="col dotRi"></div>
+            <div class="col-4"></div>
+          </div>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-success" id="lotteryStartBtn">
+            START
+          </button>
+          <button type="button" class="btn btn-success" id="lotteryStopBtn">
+            STOP
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h3 class="modalScoreTitle col">Score:</h3>
+        <p class="modalScoreContent col" id="pModalScore">0</p>
+      </div>
+    </div>
+  </div>
+</div>

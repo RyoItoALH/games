@@ -11,6 +11,7 @@
     />
     <link th:href="@{/css/top.css}" rel="stylesheet" />
     <link th:href="@{/css/modal.css}" rel="stylesheet" />
+    <link th:href="@{/css/pachinko.css}" rel="stylesheet" />
   </head>
   <body>
     <div class="container text-center">
@@ -19,9 +20,9 @@
           <p>タイピングスコア</p>
           <p class="typigScore-content" id="topTpScore">0</p>
         </div>
-        <div class="col-4 patincoScore">
+        <div class="col-4 patinkoScore">
           <p>ギャンブルスコア</p>
-          <p class="patincoScore-content" id="topGambleScore">0</p>
+          <p class="patinkoScore-content" id="topGambleScore">0</p>
         </div>
       </div>
       <div class="row">
@@ -33,8 +34,6 @@
               60秒以内で入力数を計測し <br />
               スコア化します。
             </p>
-            <script th:inline="javascript"></script>
-            <!-- Button trigger modal -->
             <button
               type="button"
               id="modalButton"
@@ -46,10 +45,30 @@
             </button>
           </div>
         </div>
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <h5 class="card-title">パチンコゲーム</h5>
+            <p class="card-text">
+              319分の1の確率で大当たり<br />
+              大当たり後60%の確率で確変<br />
+              確変中は85%の確率で継続
+            </p>
+            <button
+              type="button"
+              id="pachinkoModalButton"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#pachinkoModal"
+            >
+              スタート
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Modal -->
-    <div th:replace="modal"></div>
+    <div th:replace="typingModal"></div>
+    <div th:replace="pachinkoModal"></div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -58,5 +77,6 @@
     ></script>
     <script th:src="@{/js/top.js}"></script>
     <script th:src="@{/js/typing.js}"></script>
+    <script th:src="@{/js/pachinko.js}"></script>
   </body>
 </html>
